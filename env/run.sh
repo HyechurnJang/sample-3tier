@@ -18,11 +18,6 @@ docker rm -f registry
 rm -rf /opt/registry/*
 docker run -d -p 80:5000 --restart=always --name registry -v /opt/registry:/registry -e "REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/registry" registry:2.7.0
 
-cd $WORKDIR/../was
-docker rmi -f $REGISTRY/was:v1
-docker build --no-cache -t $REGISTRY/was:v1 .
-docker push $REGISTRY/was:v1
-curl -k -XGET http://$REGISTRY/v2/was/tags/list
-docker rmi -f $REGISTRY/was:v1
+$WORKDIR/build_was.sh $REGISTRY
+$WORKDIR/build_web.sh $REGISTRY
 
-cd $CURRDIR
