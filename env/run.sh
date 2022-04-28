@@ -23,6 +23,6 @@ mkdir -p /opt/registry
 docker rm -f registry
 rm -rf /opt/registry/*
 docker run -d -p 80:5000 --restart=always --name registry -v /opt/registry:/registry -e "REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/registry" registry:2.7.0
-
+$WORKDIR/../db/build.sh $REGISTRY
 $WORKDIR/../was/build.sh $REGISTRY
 $WORKDIR/../web/build.sh $REGISTRY $WEB_SERVER_HOST
