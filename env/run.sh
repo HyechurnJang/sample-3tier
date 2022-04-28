@@ -22,5 +22,6 @@ cd $WORKDIR/../was
 docker rmi -f $REGISTRY/was:v1
 docker build --no-cache -t $REGISTRY/was:v1 .
 docker push $REGISTRY/was:v1
+curl -k -XGET http://$REGISTRY/v2/was/tags/list
 
 cd $CURRDIR
