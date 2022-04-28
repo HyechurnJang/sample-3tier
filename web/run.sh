@@ -24,6 +24,6 @@ WAS_SERVER_HOST=$3
 
 docker rm -f web
 docker rmi -f $REGISTRY/web:v1
-docker run --name web -p 80:80 -e WEB_SERVER_HOST="$WEB_SERVER_HOST" -e WAS_SERVER_HOST="$WAS_SERVER_HOST" -d $REGISTRY/web:v1
+docker run --name web -p 80:80 -e REACT_APP_WEB_SERVER_HOST="$WEB_SERVER_HOST" -e WAS_SERVER_HOST="$WAS_SERVER_HOST" -d $REGISTRY/web:v1
 sleep 1
 docker logs web
