@@ -1,4 +1,5 @@
 #!/bin/bash
+# Pre-Installed: docker.io
 
 mkdir -p /opt/registry
 docker rm -f registry
