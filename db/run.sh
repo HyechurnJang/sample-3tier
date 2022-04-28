@@ -19,4 +19,4 @@ docker run --name db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password -e 
 sleep 1
 docker logs db
 sleep 5
-PGPASSWORD=password psql -h localhost -U postgres -d mydb -f $WORKDIR/init.sql
+PGPASSWORD=password psql -h localhost -U postgres -d 3tier -f $WORKDIR/init.sql
