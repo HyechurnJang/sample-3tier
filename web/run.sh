@@ -16,8 +16,8 @@ fi
 REGISTRY=$1
 WAS_SERVER_HOST=$2
 
-docker rm -f was
-docker rmi -f $REGISTRY/was:v1
-docker run --name web -p 80:80 -e WAS_SERVER_HOST="$WAS_SERVER_HOST" -d vmkloud/web:v1
+docker rm -f web
+docker rmi -f $REGISTRY/web:v1
+docker run --name web -p 80:80 -e WAS_SERVER_HOST="$WAS_SERVER_HOST" -d $REGISTRY/web:v1
 sleep 1
 docker logs web
