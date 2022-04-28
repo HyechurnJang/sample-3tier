@@ -14,7 +14,7 @@ if [ -z "$2" ]; then
     exit 1
 fi
 REGISTRY=$1
-WEB_SERVER_HOST=$2
+export WEB_SERVER_HOST=$2
 
 CURRDIR=$(pwd)
 WORKDIR=$(dirname $0)
