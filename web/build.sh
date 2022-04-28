@@ -21,7 +21,7 @@ WORKDIR=$(dirname $0)
 
 cd $WORKDIR
 docker rmi -f $REGISTRY/web:v1
-envsubst '${WEB_SERVER_HOST}' < $WORKDIR/src/http-common-js.template > $WORKDIR/src/http-common-js
+envsubst '${WEB_SERVER_HOST}' < $WORKDIR/src/http-common.js.template > $WORKDIR/src/http-common.js
 docker build --no-cache -t $REGISTRY/web:v1 .
 docker push $REGISTRY/web:v1
 curl -k -XGET http://$REGISTRY/v2/web/tags/list
