@@ -16,5 +16,5 @@ fi
 REGISTRY=$1
 DATABASE=$2
 
-docker rm -f $REGISTRY/was:v1
+docker rm -f was
 docker run --name was -p 8080:8080 -e POSTGRES_HOST="$DATABASE" -d $REGISTRY/was:v1
