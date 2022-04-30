@@ -8,13 +8,7 @@ if [ -z "$1" ]; then
     echo ""
     exit 1
 fi
-if [ -z "$2" ]; then
-    echo "run.sh <REGISTRY_HOSTNAME_OR_IP> <WEB_SERVER_HOST>"
-    echo ""
-    exit 1
-fi
 REGISTRY=$1
-WEB_SERVER_HOST=$2
 
 CURRDIR=$(pwd)
 WORKDIR=$(dirname $0)
